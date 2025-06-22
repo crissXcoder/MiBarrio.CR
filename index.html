@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiBarrio.CR</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <header>
+        <img src="img/logo.webp" alt="MiBarrio.CR" class="logo" />
+        <h1>Bienvenido a MiBarrio.CR</h1>
+        <p>Conectando a la comunidad con sus emprendedores locales</p>
+        <button class="login-btn" onclick="mostrarLogin()">Iniciar sesión</button>
+    </header>
+
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal" onclick="cerrarModal(event)">
+        <div class="modal-content">
+            <span class="modal-close" onclick="ocultarLogin()">✕</span>
+            <h2>Ingreso al Panel</h2>
+            <input type="text" id="usuario" placeholder="Usuario" />
+            <input type="password" id="contrasena" placeholder="Contraseña" />
+            <button onclick="validarLogin()">Entrar</button>
+            <p id="loginError" class="error-msg"></p>
+        </div>
+    </div>
+
+    <section id="buscador">
+        <input type="text" id="inputBuscar" placeholder="Buscar productos, servicios o nombres...">
+        <button onclick="buscarNegocios()">Buscar</button>
+    </section>
+    <section id="eventos">
+        <h2>📅 Eventos y Promociones</h2>
+        <div class="evento-cards">
+            <div class="evento">
+                <h3>Promo: 2x1 en batidos</h3>
+                <p>Disponible en Soda La Esquina todo el mes de julio.</p>
+            </div>
+            <div class="evento">
+                <h3>Feria del Barrio</h3>
+                <p>Domingo 30 de junio, parque central. ¡Más de 20 emprendedores!</p>
+            </div>
+        </div>
+    </section>
+
+
+    <main id="negocios-container"></main>
+
+    <footer>
+        <p>&copy; 2025 MiBarrio.CR | Desarrollado para la Expo Técnica</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

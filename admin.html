@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel Admin - MiBarrio.CR</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Panel Administrativo</h1>
+        <p>Agregar nuevos negocios</p>
+        <a href="index.html" class="volver-btn">← Volver al sitio público</a>
+    </header>
+
+    <section style="padding: 2rem;">
+        <form id="formNegocio">
+            <input type="text" id="nombre" placeholder="Nombre del negocio" required />
+            <input type="text" id="categoria" placeholder="Categoría" required />
+            <input type="text" id="descripcion" placeholder="Descripción" required />
+            <input type="text" id="imagen" placeholder="URL de la imagen" required />
+            <input type="text" id="contacto" placeholder="Link de contacto (tel o WhatsApp)" required />
+            <input type="checkbox" id="destacado" /> <label for="destacado">¿Negocio destacado?</label>
+
+            <button type="submit">Agregar Negocio</button>
+        </form>
+
+        <div id="resultado" style="margin-top: 1rem;"></div>
+    </section>
+
+    <script>
+        document.getElementById("formNegocio").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const nuevo = {
+                nombre: document.getElementById("nombre").value,
+                categoria: document.getElementById("categoria").value,
+                descripcion: document.getElementById("descripcion").value,
+                imagen: document.getElementById("imagen").value,
+                contacto: document.getElementById("contacto").value,
+                destacado: document.getElementById("destacado").checked
+            };
+
+            let negociosGuardados = JSON.parse(localStorage.getItem("negocios") || "[]");
+            negociosGuardados.push(nuevo);
+            localStorage.setItem("negocios", JSON.stringify(negociosGuardados));
+
+            document.getElementById("resultado").innerHTML = `
+    <p>Negocio guardado en el navegador.</p>
+  `;
+
+            document.getElementById("formNegocio").reset();
+        });
+
+    </script>
+</body>
+
+</html>

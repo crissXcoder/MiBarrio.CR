@@ -5,7 +5,7 @@ const negocios = [
     descripcion: "Deliciosos panes artesanales y repostería fresca.",
     imagen: "img/panaderia.webp",
     contacto: "https://wa.me/50688888888",
-    destacado: true
+    destacado: false
   },
   {
     nombre: "Soluciones Eléctricas Mario",
@@ -13,7 +13,7 @@ const negocios = [
     descripcion: "Instalaciones y reparaciones eléctricas a domicilio.",
     imagen: "img/electrica.webp",
     contacto: "tel:+50687777777",
-    destacado: false
+    destacado: true
   },
   {
     nombre: "Diseños Anita",
@@ -21,7 +21,7 @@ const negocios = [
     descripcion: "Ropa artesanal y costura personalizada.",
     imagen: "img/diseño.webp",
     contacto: "https://wa.me/50689999999",
-    destacado: true
+    destacado: false
   },
   {
     nombre: "Tecnología AlexTech",
@@ -45,6 +45,14 @@ const negocios = [
     descripcion: "Servicios de uñas, maquillaje y tratamientos relajantes.",
     imagen: "img/estetica.webp",
     contacto: "https://wa.me/50689443322",
+    destacado: false
+  },
+  {
+    nombre: "Electrónica Juan",
+    categoria: "Electrónica",
+    descripcion: "Brinda consultas Electricas y crean presupuesto para trabajos eléctricos",
+    imagen: "img/electronica.webp",
+    contacto: "https://wa.me/50688776655",
     destacado: true
   }
 ];
